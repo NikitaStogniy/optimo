@@ -27,6 +27,8 @@ To use `docker` from Terminal, choose **Connect Docker** during setup or in Sett
 - Auto-stop, local domains and reload on file changes work only while Optimo is open.
 - After an atomic save (JetBrains "safe write", Vim without `backupcopy=yes`), `node --watch` and `vite build --watch` stop seeing that file until they restart.
 - Bind mounts must be inside a project folder or a folder added in Settings → Files. Optimo checks this before starting a stack.
+- Published UDP ports don't reach the Mac; UDP between containers works.
+- Testcontainers doesn't read Docker contexts: set `DOCKER_HOST` (Settings → Connection has the line to copy).
 - No Compose profiles or multi-file Compose yet.
 - Not yet tested: VPN, corporate proxies, Firefox with local HTTPS.
 

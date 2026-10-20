@@ -34,7 +34,11 @@ To use `docker` from Terminal, choose **Connect Docker** during setup or in Sett
 
 ## Updates
 
-Optimo makes one anonymous request to the GitHub Releases API of this repository at launch. When a newer release exists, the version badge turns into "Update ↗" and opens the release page; installation is manual for now.
+From 0.7.0 on, Optimo updates itself with [Sparkle](https://sparkle-project.org). Once a day it fetches `appcast.xml` from the latest release of this repository; it sends no system profile. A new version downloads in the background, as a small delta when one is published. Before unpacking, Optimo checks the update against its own signing key, and before installing, against the Developer ID signature.
+
+When an update is ready, the version badge in the sidebar shows **Update ready** and Optimo asks: **Restart now** or **Later**. Later installs it the next time you quit Optimo. The VM and containers keep running while Optimo restarts. Settings → General has **Download updates automatically** (turn it off to be asked before each download), **Check for updates** and the release channel.
+
+From 0.6.x or earlier, update by hand once: quit Optimo and drag the new version over the old one in Applications. Your VM, images and volumes stay as they are.
 
 ---
 
@@ -45,5 +49,7 @@ Optimo — нативное приложение macOS для Docker-конте�
 **Бета.** Об ошибках пишите в [Issues](https://github.com/NikitaStogniy/optimo/issues).
 
 Установка: скачайте `Optimo-<версия>-arm64.dmg` в [Releases](https://github.com/NikitaStogniy/optimo/releases), перетащите в Applications, откройте и нажмите **Prepare environment**. Нужен Mac на Apple Silicon с macOS 14 или новее; Homebrew, Xcode и Docker Desktop не нужны. Язык интерфейса переключается в Settings → General → Language.
+
+Обновления: начиная с 0.7.0 Optimo раз в день проверяет релизы этого репозитория, скачивает новую версию в фоне и спрашивает перед перезапуском; VM и контейнеры продолжают работать. С 0.6.x один раз обновитесь вручную: закройте Optimo и перетащите новую версию поверх старой в Applications.
 
 Ограничения беты перечислены выше, в разделе «Known limitations».
